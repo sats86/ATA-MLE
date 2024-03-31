@@ -12,3 +12,7 @@
 
 ## Architecture Diagram
 ![alt text](https://github.com/sats86/ATA-MLE/blob/main/Architecture.png)
+
+## App Screenshot
+
+![alt text](https://github.com/sats86/ATA-MLE/blob/main/app-screenshot.png)
