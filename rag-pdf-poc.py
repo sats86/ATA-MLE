@@ -19,8 +19,8 @@ import time
 if not os.path.exists('files'):
     os.mkdir('files')
 
-if not os.path.exists('jj'):
-    os.mkdir('jj')
+if not os.path.exists('db'):
+    os.mkdir('db')
 
 if 'template' not in st.session_state:
     st.session_state.template = """You are a knowledgeable chatbot, here to help with questions of the user. Your tone should be professional and informative.
@@ -43,7 +43,7 @@ if 'memory' not in st.session_state:
 
 # Creating vector store
 if 'vectorstore' not in st.session_state:
-    st.session_state.vectorstore = Chroma(persist_directory='jj',
+    st.session_state.vectorstore = Chroma(persist_directory='db',
                                           embedding_function=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
                                           )
 #Loading the LLM llama2 model to use for inference
@@ -72,6 +72,7 @@ for message in st.session_state.chat_history:
     with st.chat_message(message["role"]):
         st.markdown(message["message"])
 
+#Upload the pdf file for questions answering on it.
 if uploaded_file is not None:
     if not os.path.isfile("files/"+uploaded_file.name+".pdf"):
         with st.status("Analyzing your document..."):
