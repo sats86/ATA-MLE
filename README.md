@@ -10,4 +10,5 @@
 2.Rest API for the app
 3.Evaluation and monitoring response and prompt.
 
-![alt text](http://url/to/img.png)
+## Architecture Diagram
+![alt text](https://github.com/sats86/ATA-MLE/blob/main/Architecture.png)
